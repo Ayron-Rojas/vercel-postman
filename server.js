@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000
 app.use(express.json())
 const { Pool } = require('pg');
-const dotenv = require('dotenv').config();
+//const dotenv = require('dotenv').config();
 // Middleware para verificar la API key
 const API_KEY = process.env.API_KEY;
 const verificarApiKey = (req, res, next) => {
