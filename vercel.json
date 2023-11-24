@@ -1,15 +1,14 @@
 {
-    "version":2,
-    "builds":[  
-        {
-            "src":"./index.js",
-            "use":"@vercel/node"
-        }
-    ],
-    "routes":[
-        {
-            "src":"/(.*)",
-            "dest":"/"
-        }
+    "version": 2,
+    "name": "petgram-server-camilot12",
+    "alias": ["petgram-api-camilot12"],
+    "builds": [{ "src": "server.js", "use": "@vercel/node" }],
+    "routes": [{
+      "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      },
+      "src": "/.*", "dest": "server.js" }
     ]
 }
